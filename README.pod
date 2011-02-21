@@ -42,3 +42,12 @@ No guarantee for nothing. It may damage your log data, your computer. It may des
 
 
 
+ package main;
+
+ use strict;
+ use warnings;
+
+ use MyServer;
+
+ MyServer->new->run;
+
