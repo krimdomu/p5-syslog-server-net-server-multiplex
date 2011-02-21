@@ -1,0 +1,44 @@
+=pod
+
+=head2 Simple Syslog-Server
+
+This is a simple Syslog-Server based on Net::Server::Multiplex.
+
+=head2 Dependencies
+
+=over 4
+
+=item *
+
+L<Net::Server::Multiplex>
+
+=item *
+
+L<IO::Multiplex>
+
+=back
+
+=head2 WARNING
+
+No guarantee for nothing. It may damage your log data, your computer. It may destroy even you. It is still Alpha.
+
+=head2 USAGE
+
+ package MyServer;
+ 
+ use strict;
+ use warnings;
+
+ use Syslog::Server::Net::Server::Multiplex;
+ use base qw(Syslog::Server::Net::Server::Multiplex);
+ 
+ use Data::Dumper;
+ 
+ sub input {
+    my ($self, $msg) = @_;
+
+    print Dumper($msg);
+ }
+
+
+
